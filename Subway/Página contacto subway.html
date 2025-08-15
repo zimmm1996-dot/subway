@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Subway México</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #007f3f;
+      color: white;
+      margin: 0;
+      padding: 0;
+      animation: fadeInPage 1s ease-in-out;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: #004d25;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid #ffcb05;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      border: 2px solid #ffcb05;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #ffcb05;
+      color: #004d25;
+    }
+
+    main {
+      padding: 40px;
+    }
+
+    .contacto-box {
+      background-color: #006633;
+      border: 3px solid #ffcb05;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contacto-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px dashed #ffcb05;
+      padding-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: 2px solid #ffcb05;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ffe100;
+    }
+
+    button {
+      background-color: #ffcb05;
+      color: #004d25;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffe100;
+    }
+
+    footer {
+      background-color: #004d25;
+      text-align: center;
+      padding: 15px;
+      border-top: 5px solid #ffcb05;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contáctanos</h1>
+    <nav>
+      <ul>
+        <li><a href="pagina subway principal.html">Inicio</a></li>
+        <li><a href="Pagina menú subway.html">Menú</a></li>
+        <li><a href="Pagina promociones subway.html">Promociones</a></li>
+        <li><a href="Página conócenos subway.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contacto-box">
+      <h2>📨 Envíanos un mensaje</h2>
+      <form id="formulario" action="#" method="post">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <img src="10CC7EF8-5193-4B85-8149-59DAF486739E.jpeg" width="829" height="396">
+
+  <footer>
+    <p>&copy; 2025 Subway México - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- ✅ JavaScript interactivo -->
+  <script>
+    const formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = formulario.nombre.value.trim();
+      const correo = formulario.correo.value.trim();
+      const mensaje = formulario.mensaje.value.trim();
+
+      if (nombre && correo && mensaje) {
+        alert(`¡Gracias, ${nombre}! Tu mensaje ha sido recibido. 🥪`);
+        window.location.href = "pagina subway principal.html";
+      } else {
+        alert('Por favor completa todos los campos antes de enviar.');
+      }
+    });
+  </script>
+</body>
+</html>
